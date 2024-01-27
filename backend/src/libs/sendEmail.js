@@ -2,22 +2,24 @@ import nodemailer from "nodemailer";
 
 export const emailRegistro = async (datos) => {
   // Con mail nico9934
-  // const transport = nodemailer.createTransport({
-  //   host: "smtp.gmail.com",
-  //   port: 465,
-  //   secure: true,
-  //   auth: {
-  //     user: process.env.EMAIL_USER,
-  //     pass: process.env.EMAIL_PASS,
-  //   },
-  // });
+  //   const transport = nodemailer.createTransport({
+  //     host: "smtp.gmail.com",
+  //     port: 465,
+  //     secure: true,
+  //     auth: {
+  //       user: process.env.EMAIL_USER,
+  //       pass: process.env.EMAIL_PASS,
+  //     },
+  //   });
 
-  // Con nodeMailer
+  //   Con nodeMailer
   const transport = nodemailer.createTransport({
     host: "sandbox.smtp.mailtrap.io",
     port: 2525,
     auth: {
       user: process.env.EMAIL_USER,
+      //   user: "e9dadd1ad9eed1",
+      //   pass: "6690734e75cad7",
       pass: process.env.EMAIL_PASS,
     },
   });
@@ -117,4 +119,6 @@ export const emailRegistro = async (datos) => {
     subject: "Presupuesto Paisajismo Canopia",
     html: htmlContent,
   });
+
+  console.log(info);
 };

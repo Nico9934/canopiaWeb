@@ -1,0 +1,90 @@
+Docker 
+
+Para crear un contenedor teniendo de base Mongo
+docker create mongo // docker container create mongo => Nos devuelve un ID
+
+Para ejecutar un contenedor
+docker start ${idCreadoAnteriormente} => Nos devuelve el id
+
+Para verificar que el container esta corriendo correctamente
+docker ps => Nos devuelve una tabla 
+	- Container ID
+	- Image
+	- Created
+
+Para detener el container
+docker stop ${idCreadoAnteriormente}
+
+Para ver todos los contenedor, hasta aquellos que no estan corriendo 
+docker ps -a
+
+para eliminar
+docker rm stoic_stonebraker (También se pueden usar los names de los container)
+
+Para crear un container con el nombre que querramos nosotros
+docker create --name monguito mongo (El nombre, y dsps el nombre de la imagen que usa de referencia)
+
+docker start monguito (Lo inicia)
+docker stop monguito (Lo frena)
+docker rm monguito (Lo elimina)
+
+Para crear un container con una configuracion de un puerto
+docker create -p27017:27017 --name monguito
+
+(El primer puerto es el puerto de nuestra maquina, el segundo es el que vamos a 
+mapear con nuestra máquina)
+docker ps
+
+Si no se especifica el puerto para mapear, docker decide cual es el que se mapea. 
+docker create -p27017 --name monguito2 mongo
+
+para saber si el container se ejecuto correctamente
+docker logs monguito
+existe una opcion que se queda escuchando los logs de nuestro container
+docker logs --follow monguito
+
+Comando combinado pull create start
+docker run 
+	|=>Busca la imagen, si no está, la descarga
+	|=> Crea un contenedor
+	|=> Iniciar el contenedor
+
+docker run ${nombreDeLaImagen} (Si nosotros quisieramos ejecutar la imagen de forma dettached, (para que no se cierre
+el contenedor cada vez que quiero salir del follow) hay que agregarle -d
+docker run -d mongo
+Todo en una sola linea de codigo
+docker run --name ${nombreDeLaImagen} -p27017:27017 -d mongo
+
+
+
+
+
+para eliminar una imagen 
+docker rm monguito
+
+Codigo para saber como se usa docker en el codigo: 
+	
+import express from 'express'
+import mongoose from 'mongoose'
+
+const Animal = mongoose.model('Animal', new mongoose.Schema({
+  tipo: String,
+  estado: String,
+}))
+
+const app = express()
+
+mongoose.connect('mongodb://nico:password@monguito:27017/miapp?authSource=admin')
+
+app.get('/', async (_req, res) => {
+  console.log('listando... chanchitos...')
+  const animales = await Animal.find();
+  return res.send(animales)
+})
+app.get('/crear', async (_req, res) => {
+  console.log('creando...')
+  await Animal.create({ tipo: 'Chanchito', estado: 'Feliz' })
+  return res.send('ok')
+})
+
+app.listen(3000, () => console.log('listening...'))
