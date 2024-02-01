@@ -12,18 +12,22 @@ const UserForm = () => {
   };
 
   return (
-    <div className="w-full flex flex-col justify-center item mt-10 text-negro">
-      <div className="w-10/12 m-auto flex gap-8 font-comfortaa h-auto justify-center">
-        <div className="flex w-1/2 justify-center gap-10 flex-col">
-          <h3 className="text-3xl">Cotización Gratis</h3>
-          <p className="text-sm">
-            Cotiza tu presupuesto de paisajismo en el instante. Completa tus
-            datos y en breve nos estaremos comunicando con vos.
+    <div className="w-full flex flex-col justify-center h-screen text-negro py-12 sm:py-16">
+      <div className="w-11/12 m-auto flex flex-col sm:flex-row gap-16 font-comfortaa h-auto justify-center">
+        {/* Description */}
+        <div className="flex w-full sm:w-1/2 justify-center flex-col">
+          <h3 className="mb-6 text-2xl sm:text-4xl border-b-8 pb-4 border-violeta w-fit sm:text-end">
+            Simulá tu propuesta
+          </h3>
+          <p className="text-sm sm:text-xl">
+            Te ofrecemos una simulación aproximada del proyecto que desees
+            iniciar. Completa los datos y en breve nos comunicaremos con vos.
           </p>
         </div>
+        {/* Formulario */}
         <form
           action=""
-          className="w-1/2 justify-center items-center gap-10 flex flex-col flex-wrap"
+          className="w-full sm:w-1/2 justify-center items-center gap-10 flex flex-col flex-wrap"
         >
           <div className="w-full flex flex-col ">
             <label htmlFor="name" className="text-sm">

@@ -6,7 +6,7 @@ const ServicesGallery = () => {
     <div className="w-full h-screen font-comfortaa">
       <div className="w-11/12 h-full m-auto flex flex-col-reverse sm:flex-row py-12 sm:py-16 gap-4">
         {/* Grid desktop*/}
-        <div className="hidden sm:grid w-full sm:w-1/2 h-1/2 sm:h-full object-cover grid-cols-7 grid-rows-9 gap-4">
+        <div className="grid w-full sm:w-1/2 h-1/2 sm:h-full object-cover grid-cols-7 grid-rows-9 gap-4">
           <div className="col-span-2 row-span-6 bg-cover bg-[url('https://verdecora.es/blog/wp-content/uploads/2016/01/diseno-de-jardines.jpg.webp')]"></div>
           <div className="col-span-5 row-span-4 col-start-3 bg-cover bg-[url('https://blog.aepla.es/wp-content/uploads/2022/08/que-son-jardines-tropicales.jpeg')]"></div>
           <div className="col-span-3 row-span-5 col-start-3 row-start-5 bg-cover bg-[url('https://images.homify.com/v1456335871/p/photo/image/1354543/jardines-paisajismo-y-decoraciones-elyflor-753311-MLV20534579928_012016-F.jpg')]"></div>
@@ -14,7 +14,7 @@ const ServicesGallery = () => {
           <div className="col-span-2 row-span-3 row-start-7 bg-cover bg-[url('https://jardinable.es/wp-content/uploads/2020/08/jardinable-dise%C3%B1o-jardines-2.jpg')]"></div>
         </div>
         {/* Gallery mobile */}
-        <SliderCarousel />
+        {/* <SliderCarousel /> */}
         {/* Description */}
         <div className="max-h-1/2 sm:h-full sm:w-1/2 flex flex-col sm:items-end sm:justify-center">
           <h3 className="mb-6 text-2xl sm:text-4xl border-b-8 pb-4 border-violeta w-fit sm:text-end">

@@ -18,7 +18,7 @@ const Header = () => {
           </div>
 
           {/* Navegacion desktop */}
-          <nav className="w-5/12 sm:flex hidden justify-between font-light text-sm">
+          <nav className="w-5/12 sm:flex hidden justify-between font-light text-sm font-comfortaa">
             <a
               className="text-negro  pb-1 hover:text-verdeOscuro transition-colors duration-300"
               href="/"
