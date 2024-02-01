@@ -1,15 +1,39 @@
 import React from "react";
+import { motion, useScroll } from "framer-motion";
 
 const IconSection = () => {
+  const iconVariants = {
+    offscreen: {
+      y: -150,
+      opacity: 0,
+    },
+    onscreen: {
+      y: 0,
+
+      transition: {
+        type: "fade",
+        bounce: 0.8,
+        duration: 1.3,
+      },
+      opacity: 1,
+    },
+  };
+
   return (
-    <div className="w-full h-screen sm:h-auto font-comfortaa bg-verdeOscuro text-gris py-12">
+    <div className="w-full h-screen flex flex-col sm:h-auto font-comfortaa bg-verdeOscuro text-gris py-12 sm:flex-col">
       <h3 className="m-auto text-2xl sm:text-4xl border-b-8 pb-4 border-beige w-fit sm:text-end">
         Servicios
       </h3>
       <div className="w-11/12 h-full sm:h-auto m-auto flex sm:flex-row sm:py-16">
         <div className="flex justify-evenly sm:justify-between w-full flex-col sm:flex-row items-center mx-auto">
           {/* Icon */}
-          <div className="flex flex-col items-center gap-2 sm:gap-4">
+          <motion.div
+            className="flex flex-col items-center gap-2 sm:gap-4"
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={iconVariants}
+          >
             <svg
               viewBox="0 0 448 512"
               className="w-16 h-fit sm:w-24 sm:h-24 fill-gris hover:cursor-pointer hover:fill-verdeClaro hover:scale-105 transition-all duration-300"
@@ -19,9 +43,15 @@ const IconSection = () => {
             <p className="text-sm sm:text-lg text-center">
               Creación de paisajes
             </p>
-          </div>
+          </motion.div>
           {/* Icon */}
-          <div className="flex flex-col items-center gap-2 sm:gap-4">
+          <motion.div
+            className="flex flex-col items-center gap-2 sm:gap-4"
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.8 }}
+            variants={iconVariants}
+          >
             <svg
               viewBox="0 0 512 512"
               className="w-16 h-fit sm:w-24 sm:h-24 fill-gris hover:cursor-pointer hover:fill-verdeClaro hover:scale-105 transition-all duration-300"
@@ -31,9 +61,15 @@ const IconSection = () => {
             <p className="text-sm text-center sm:text-lg ">
               Mantenimiento de espacios verdes
             </p>
-          </div>
-          {/* Icon */}
-          <div className="flex flex-col items-center gap-2 sm:gap-4">
+          </motion.div>
+          {/* Icon*/}
+          <motion.div
+            className="flex flex-col items-center gap-2 sm:gap-4"
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.8 }}
+            variants={iconVariants}
+          >
             <svg
               viewBox="0 0 384 512"
               className="w-16 h-fit sm:w-24 sm:h-24 fill-gris hover:cursor-pointer hover:fill-verdeClaro hover:scale-105 transition-all duration-300"
@@ -41,7 +77,7 @@ const IconSection = () => {
               <path d="M192 512C86 512 0 426 0 320C0 228.8 130.2 57.7 166.6 11.7C172.6 4.2 181.5 0 191.1 0h1.8c9.6 0 18.5 4.2 24.5 11.7C253.8 57.7 384 228.8 384 320c0 106-86 192-192 192zM96 336c0-8.8-7.2-16-16-16s-16 7.2-16 16c0 61.9 50.1 112 112 112c8.8 0 16-7.2 16-16s-7.2-16-16-16c-44.2 0-80-35.8-80-80z" />
             </svg>
             <p className="text-sm text-center sm:text-lg ">Sistemas de riego</p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
