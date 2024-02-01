@@ -1,9 +1,8 @@
 import React from "react";
-import HamburguerIcon from "./HamburguerIcon";
 
 const HamburguerMenu = ({ menuActive, setMenuActive }) => {
   return (
-    <div className="w-full h-96 bg-gris top-0">
+    <div className="w-full h-96 bg-gris z-10 top-12 fixed sm:hidden">
       <div className="w-full h-full flex justify-center items-center flex-col">
         <a
           className="text-negro p-3 w-full text-center  hover:text-verdeOscuro hover:scale-105 transition-all"
