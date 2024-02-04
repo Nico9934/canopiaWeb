@@ -19,7 +19,7 @@ const UserForm = () => {
           <h3 className="mb-6 text-2xl sm:text-4xl border-b-8 pb-4 border-violeta w-fit sm:text-end">
             Simulá tu propuesta
           </h3>
-          <p className="text-sm sm:text-xl">
+          <p className="text-sm sm:text-xl leading-8 sm:leading-10">
             Te ofrecemos una simulación aproximada del proyecto que desees
             iniciar. Completa los datos y en breve nos comunicaremos con vos.
           </p>

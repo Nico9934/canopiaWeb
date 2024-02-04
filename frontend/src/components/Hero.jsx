@@ -27,7 +27,7 @@ const Hero = () => {
             whileInView="onscreen"
             viewport={{ once: true, amount: 0 }}
             variants={titleVariant}
-            className="font-comfortaa text-4xl text-gris font-bold sm:leading-snug sm:text-end sm:text-6xl sm:w-3/5 "
+            className="font-comfortaa text-4xl text-gris font-bold leading-relaxed sm:leading-loose sm:text-end sm:text-6xl sm:w-3/5 "
           >
             ¡Hola! La evolución en tu entorno natural te espera.
           </motion.p>

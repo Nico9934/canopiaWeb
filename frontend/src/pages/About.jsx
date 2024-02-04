@@ -20,19 +20,45 @@ const About = () => {
       opacity: 1,
     },
   };
+
+  const imageVariants = {
+    offscreen: {
+      x: -100,
+      opacity: 0,
+    },
+    onscreen: {
+      x: 0,
+
+      transition: {
+        type: "fade",
+        bounce: 0.1,
+        duration: 1.3,
+      },
+      opacity: 1,
+    },
+  };
   return (
     <>
       <div className="w-full min-h-screen font-comfortaa">
-        <div className="w-11/12  flex h-full m-auto flex-col py-32 items-center">
+        <div className="w-11/12  flex h-full m-auto flex-col py-24 sm:py-32 items-center">
           <h3 className="mb-6 text-2xl sm:text-4xl border-b-8 pb-4 border-violeta w-fit sm:text-end">
             Sobre nosotros...
           </h3>
+
           <div className="flex justify-between w-full flex-col-reverse sm:flex-row m-auto gap-16 sm:items-center">
-            <img
-              className="w-full"
-              src="https://cdn.palbincdn.com/users/46563/upload/images/jardinero-cuidando-jardin-domicilio.jpg"
-              alt=""
-            />
+            <motion.div
+              className="w-full sm:w-full sm:text-end text-justify"
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0 }}
+              variants={imageVariants}
+            >
+              <img
+                className="w-full"
+                src="https://cdn.palbincdn.com/users/46563/upload/images/jardinero-cuidando-jardin-domicilio.jpg"
+                alt=""
+              />
+            </motion.div>
 
             <motion.div
               className="w-full sm:w-full sm:text-end text-justify"
@@ -41,7 +67,7 @@ const About = () => {
               viewport={{ once: true, amount: 0 }}
               variants={descriptionVariants}
             >
-              <p className="w-full sm:w-full sm:text-end text-justify">
+              <p className="w-full sm:w-full sm:text-end text-justify leading-8 sm:leading-10">
                 Desde el 2016 somos una empresa que crea y mantiene paisajes.
                 Nuestro equipo está formado por profesionales del diseño de
                 espacios verdes. Formamos una comunidad sostenida por

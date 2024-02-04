@@ -4,6 +4,7 @@ import ServicesGallery from "../components/ServicesGallery";
 import IconSection from "../components/IconSection";
 import UserForm from "../components/UserForm";
 import Footer from "../components/Footer";
+import SalientProjects from "../components/SalientProjects";
 
 const Index = () => {
   return (
@@ -11,6 +12,7 @@ const Index = () => {
       <Hero />
       <ServicesGallery />
       <IconSection />
+      <SalientProjects />
       <UserForm />
       <Footer />
     </div>
